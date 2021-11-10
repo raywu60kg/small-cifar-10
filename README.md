@@ -8,7 +8,10 @@ The first 200 image from the [kaggle cifar-10 competition](https://www.kaggle.co
 #### 2. Upload all the image in train folder to the bucket
 
 #### 3. Edit the `trainLabels.csv`
-Change the first column to the bucket name you just created
+
+```
+awk '{print "gs://<YOUR_BUCKET_NAME>/" $1}' trainLabels.csv >> FormatedTrainLabels.csv
+```
 
 #### 4. Also upload the edited `trainLabels.csv` to Cloud Storage
 
